@@ -11,3 +11,17 @@
         Black:                   #000000
 
 =================================================== */
+
+span {
+    font-family: Mystery Quest, cursive;
+    font-size: 40px;
+}
+
+div {
+    text-align: center;
+}
+
+#title {
+    color: #f4c613;
+}
+
