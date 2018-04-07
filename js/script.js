@@ -48,9 +48,46 @@ $(function () {
 /* ===================================================
                     Responsive Tabs
 =================================================== */
-$(function() {
+$(function () {
     $("#services-tabs").responsiveTabs({
         animation: 'slide'
     });
 });
 
+/* ===================================================
+                    Portfolio
+=================================================== */
+$(window).on('load', function () {
+    // Initialize isotope
+    $("#isotope-container").isotope({
+
+    });
+
+    //filter items on button click
+    $("#isotope-filters").on('click', 'button', function () {
+        // get filter value
+        var filterValue = $(this).attr('data-filter');
+
+        // filter the portfolio view
+        $("#isotope-container").isotope({
+            filter: filterValue
+        });
+
+        // activate the button
+        $("#isotope-filters").find('.active').removeClass('active');
+        $(this).addClass('active');
+    });
+});
+
+/* ===================================================
+                    Magnifier
+=================================================== */
+$(function () {
+    $("#portfolio-wrapper").magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        gallery: {
+            enabled: true
+        }
+    });
+});
